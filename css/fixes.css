@@ -1,0 +1,237 @@
+/* Correções e melhorias para organização da página */
+
+/* Correção do logo no header */
+.logo {
+    width: 500px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: transparent;
+}
+
+/* Melhorias na responsividade do header */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+}
+
+/* Correção do espaçamento do hero */
+.hero {
+    padding-top: 80px;
+    min-height: calc(100vh - 80px);
+}
+
+/* Melhorias na grid de serviços */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Correção dos cards de serviço */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 300px;
+}
+
+.service-description {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.service-link {
+    margin-top: auto;
+}
+
+/* Melhorias na seção sobre */
+.about-content {
+    align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        text-align: center;
+    }
+    
+    .about-text .section-title {
+        text-align: center;
+    }
+}
+
+/* Correções na seção de contato */
+.contact-content {
+    align-items: flex-start;
+}
+
+/* Melhorias na navegação móvel */
+@media (max-width: 768px) {
+    .nav-menu {
+        background-color: rgba(26, 26, 46, 0.98);
+        backdrop-filter: blur(10px);
+    }
+    
+    .nav-menu.active {
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+}
+
+/* Correção do footer */
+.footer {
+    margin-top: 0;
+}
+
+.footer-content {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Melhorias na tipografia */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Correções de acessibilidade */
+.btn:focus,
+.nav-link:focus,
+.service-link:focus {
+    outline: 2px solid var(--light-gold);
+    outline-offset: 2px;
+}
+
+/* Melhorias na performance */
+.hero-background,
+.stars,
+.constellation {
+    will-change: transform;
+}
+
+/* Correção de overflow */
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Melhorias nos botões */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    min-width: 120px;
+}
+
+.btn-purchase {
+    margin-top: 1rem;
+}
+
+/* Correções específicas para mobile */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animações suaves */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Correção de z-index */
+.header {
+    z-index: 1000;
+}
+
+.hero {
+    z-index: 1;
+}
+
+/* Melhorias na legibilidade */
+.text-dark {
+    color: #2c3e50;
+}
+
+.text-secondary {
+    color: #6c757d;
+}
+
+/* Correções finais */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+}
+
+
+
+
+.profile-circle {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: top;
+}
+
