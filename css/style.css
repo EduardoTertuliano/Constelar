@@ -940,3 +940,27 @@ section {
     }
 }
 
+
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+.hero-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-title img {
+    max-width: 100%;
+    height: auto;
+}
+
+
