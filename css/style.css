@@ -21,8 +21,8 @@
     --gradient-stars: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px);
     
     /* Tipografia */
-    --font-primary: 'Inter', sans-serif;
-    --font-display: 'Playfair Display', serif;
+    --font-primary: 'Roboto', sans-serif;
+    --font-display: 'Comfortaa', cursive;
     
     /* Espaçamentos */
     --container-max-width: 1200px;
@@ -961,6 +961,85 @@ section {
 .hero-title img {
     max-width: 100%;
     height: auto;
+}
+
+
+
+
+/* Custom Fonts */
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../assets/fontes/Comfortaa/Comfortaa-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../assets/fontes/Comfortaa/Comfortaa-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../assets/fontes/Comfortaa/Comfortaa-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DJB Number 2 Pencil';
+    src: url('../assets/fontes/djb_number_2_pencil/DJB Number 2 Pencil.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DJB Number 2 Pencil';
+    src: url('../assets/fontes/djb_number_2_pencil/DJB Number 2 Pencil Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fontes/roboto/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fontes/roboto/Roboto-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fontes/roboto/Roboto-Regular.ttf') format('truetype'); /* Assuming Regular exists, if not, use Medium */
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fontes/roboto/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fontes/roboto/Roboto-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fontes/roboto/Roboto-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fontes/roboto/Roboto-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
 }
 
 
