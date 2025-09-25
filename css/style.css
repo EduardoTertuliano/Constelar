@@ -533,6 +533,22 @@ section {
     font-size: 3rem;
     margin-bottom: 1rem;
     display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 auto 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-light);
+}
+
+.service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .service-title {
@@ -1158,6 +1174,15 @@ p {
 
     .hero-title {
         font-size: clamp(2.5rem, 10vw, 4rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-title img {
+        max-width: 80%;
+        height: auto;
+        margin: 0 auto;
     }
 
     .hero-description {
