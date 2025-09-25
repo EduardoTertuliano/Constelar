@@ -430,3 +430,22 @@ if (typeof module !== 'undefined' && module.exports) {
     };
 }
 
+
+
+// Smooth scrolling for anchor links
+function initializeSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+}
+
+// Call smooth scrolling on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', initializeSmoothScrolling);
+
+
