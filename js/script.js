@@ -64,10 +64,10 @@ function initializeNavigation() {
     if (header) {
         window.addEventListener('scroll', function() {
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(26, 26, 46, 0.98)';
+                header.style.background = 'rgba(68, 62, 132, 0.98)';
                 header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
             } else {
-                header.style.background = 'rgba(26, 26, 46, 0.95)';
+                header.style.background = 'rgba(68, 62, 132, 0.95)';
                 header.style.boxShadow = 'none';
             }
         });

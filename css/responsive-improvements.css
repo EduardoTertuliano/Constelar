@@ -1,0 +1,462 @@
+/* Melhorias de Responsividade e Aplicação das Cores Especificadas */
+
+:root {
+    /* Cores especificadas pelo usuário */
+    --primary-blue: #443E84;      /* RGB 68 62 132 */
+    --light-blue: #0DA7D9;       /* RGB 13 167 217 */
+    --accent-yellow: #E5D70F;    /* RGB 229 215 15 */
+    
+    /* Gradientes com as novas cores */
+    --gradient-primary-new: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+    --gradient-secondary-new: linear-gradient(135deg, var(--light-blue) 0%, var(--accent-yellow) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-yellow) 100%);
+}
+
+/* Aplicação das novas cores nos botões */
+.btn-primary {
+    background: var(--gradient-primary-new);
+    color: white;
+    box-shadow: 0 4px 15px rgba(68, 62, 132, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(68, 62, 132, 0.4);
+    background: linear-gradient(135deg, var(--primary-blue) 20%, var(--light-blue) 80%);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--light-blue);
+}
+
+.btn-secondary:hover {
+    background: var(--light-blue);
+    color: white;
+    border-color: var(--light-blue);
+}
+
+.btn-purchase {
+    background: var(--gradient-secondary-new);
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.btn-purchase:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(13, 167, 217, 0.3);
+    background: linear-gradient(135deg, var(--light-blue) 20%, var(--accent-yellow) 80%);
+}
+
+/* Aplicação das cores no header e navegação */
+.header {
+    background: rgba(68, 62, 132, 0.95);
+}
+
+.nav-link:hover {
+    color: var(--accent-yellow);
+}
+
+.nav-link::after {
+    background: var(--gradient-secondary-new);
+}
+
+.hamburger .bar {
+    background: var(--accent-yellow);
+}
+
+/* Aplicação das cores nos cards de serviço */
+.service-card::before {
+    background: var(--gradient-primary-new);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(68, 62, 132, 0.15);
+}
+
+.service-link {
+    color: var(--primary-blue);
+}
+
+.service-link:hover {
+    color: var(--light-blue);
+}
+
+/* Aplicação das cores nos elementos de contato */
+.contact-icon {
+    background: var(--gradient-primary-new);
+}
+
+.contact-details h3 {
+    color: var(--accent-yellow);
+}
+
+.social-links h3 {
+    color: var(--accent-yellow);
+}
+
+.social-link:hover {
+    background: rgba(68, 62, 132, 0.2);
+}
+
+/* Aplicação das cores nas especialidades */
+.specialty {
+    background: var(--gradient-primary-new);
+    color: white;
+}
+
+/* Melhorias de responsividade para tablets */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .about-content,
+    .marcos-content,
+    .contact-content {
+        gap: 3rem;
+    }
+    
+    .floating-elements {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .profile-circle {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Melhorias de responsividade para smartphones grandes */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .nav-logo {
+        gap: 10px;
+    }
+    
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    .hero {
+        padding: 100px 0 50px;
+        min-height: 80vh;
+    }
+    
+    .hero-content {
+        padding: 0 20px;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 1.8rem;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .keys-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .key-item {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .specialties-list {
+        gap: 0.3rem;
+    }
+    
+    .specialty {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .social-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .contact-item {
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Melhorias de responsividade para smartphones pequenos */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .nav-container {
+        padding: 0 10px;
+    }
+    
+    .hero {
+        padding: 80px 0 40px;
+        min-height: 70vh;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .service-title {
+        font-size: 1.3rem;
+    }
+    
+    .service-description {
+        font-size: 0.95rem;
+    }
+    
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .keys-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-description,
+    .marcos-description {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .profile-circle {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .floating-elements {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .element-1 {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .element-2 {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .element-3 {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Melhorias para telas muito pequenas */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .service-card {
+        padding: 1.2rem;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Melhorias para navegação mobile */
+@media (max-width: 768px) {
+    .nav-menu {
+        background: linear-gradient(135deg, var(--primary-blue) 0%, rgba(68, 62, 132, 0.95) 100%);
+        backdrop-filter: blur(10px);
+    }
+    
+    .nav-menu.active {
+        box-shadow: 0 10px 30px rgba(68, 62, 132, 0.3);
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+        background: var(--accent-yellow);
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+        background: var(--accent-yellow);
+    }
+}
+
+/* Melhorias para acessibilidade e foco */
+.btn:focus,
+.nav-link:focus,
+.service-link:focus {
+    outline: 2px solid var(--accent-yellow);
+    outline-offset: 2px;
+}
+
+/* Animações suaves para elementos interativos */
+.service-card,
+.key-item,
+.social-link,
+.btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Melhorias para o hero em diferentes orientações */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding: 60px 0 30px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Otimizações para impressão */
+@media print {
+    .btn-primary,
+    .btn-secondary,
+    .btn-purchase {
+        background: none !important;
+        color: var(--primary-blue) !important;
+        border: 1px solid var(--primary-blue) !important;
+    }
+    
+    .service-card {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Melhorias para telas de alta resolução */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .hero-title {
+        font-size: 5.5rem;
+    }
+}
+
+/* Suporte para modo escuro (se necessário no futuro) */
+@media (prefers-color-scheme: dark) {
+    .service-card {
+        background: rgba(68, 62, 132, 0.1);
+        border-color: rgba(68, 62, 132, 0.2);
+    }
+}
+
+/* Melhorias para animações com base na preferência do usuário */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
