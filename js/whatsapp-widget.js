@@ -147,7 +147,7 @@ class WhatsAppWidget {
         }
 
         // Número do WhatsApp da Constelar (substitua pelo número real)
-        const phoneNumber = '5511999999999'; // Formato: código do país + DDD + número
+        const phoneNumber = '5511964771973'; // Formato: código do país + DDD + número
 
         // Montar a mensagem
         const message = `Olá! Meu nome é ${userName}.
