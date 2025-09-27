@@ -449,3 +449,90 @@ function initializeSmoothScrolling() {
 document.addEventListener('DOMContentLoaded', initializeSmoothScrolling);
 
 
+
+
+// Games Slider Functionality
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    // Hide all slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Show current slide
+    if (slides[index]) {
+        slides[index].classList.add('active');
+    }
+    if (dots[index]) {
+        dots[index].classList.add('active');
+    }
+    
+    currentSlideIndex = index;
+}
+
+function changeSlide(direction) {
+    let newIndex = currentSlideIndex + direction;
+    
+    if (newIndex >= totalSlides) {
+        newIndex = 0;
+    } else if (newIndex < 0) {
+        newIndex = totalSlides - 1;
+    }
+    
+    showSlide(newIndex);
+}
+
+function currentSlide(index) {
+    showSlide(index - 1); // Convert to 0-based index
+}
+
+// Auto-advance slider
+function startAutoSlider() {
+    setInterval(() => {
+        changeSlide(1);
+    }, 4000); // Change slide every 4 seconds
+}
+
+// Initialize slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    if (slides.length > 0) {
+        showSlide(0); // Show first slide
+        startAutoSlider(); // Start auto-advance
+    }
+});
+
+// Touch/swipe support for mobile
+let startX = 0;
+let endX = 0;
+
+function handleTouchStart(e) {
+    startX = e.touches[0].clientX;
+}
+
+function handleTouchEnd(e) {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+}
+
+function handleSwipe() {
+    const threshold = 50; // Minimum swipe distance
+    const diff = startX - endX;
+    
+    if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+            changeSlide(1); // Swipe left - next slide
+        } else {
+            changeSlide(-1); // Swipe right - previous slide
+        }
+    }
+}
+
+// Add touch event listeners to slider
+const sliderContainer = document.querySelector('.slider-container');
+if (sliderContainer) {
+    sliderContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
+    sliderContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
+}
