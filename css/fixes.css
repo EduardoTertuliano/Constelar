@@ -235,3 +235,102 @@ img {
     object-position: top;
 }
 
+/* Melhorias responsivas para o menu de redes sociais */
+.social-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Em telas grandes (desktop) - uma única linha */
+@media (min-width: 1024px) {
+    .social-grid {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 1.5rem;
+    }
+    
+    .social-link {
+        flex: 0 0 auto;
+        min-width: 140px;
+    }
+}
+
+/* Em telas médias (tablet) - máximo 3 por linha */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .social-grid {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .social-link {
+        flex: 0 0 calc(33.333% - 0.67rem);
+        min-width: 140px;
+        max-width: 180px;
+    }
+}
+
+/* Em telas pequenas (mobile) - máximo 2 por linha */
+@media (max-width: 767px) {
+    .social-grid {
+        justify-content: center;
+        gap: 0.75rem;
+    }
+    
+    .social-link {
+        flex: 0 0 calc(50% - 0.375rem);
+        min-width: 120px;
+        max-width: 160px;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .social-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Em telas muito pequenas - uma por linha se necessário */
+@media (max-width: 480px) {
+    .social-grid {
+        gap: 0.5rem;
+    }
+    
+    .social-link {
+        flex: 0 0 calc(50% - 0.25rem);
+        min-width: 100px;
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .social-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Melhorias visuais para os links sociais */
+.social-link {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.social-link:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.1);
+}
+
