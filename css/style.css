@@ -1232,6 +1232,7 @@ p {
 
     .contact-content {
         flex-direction: column;
+        text-align: center;
     }
 
     .contact-info, .contact-form {
@@ -1240,6 +1241,24 @@ p {
 
     .contact-item {
         justify-content: center;
+    }
+    
+    /* Centralização geral do conteúdo em mobile */
+    .container {
+        text-align: center;
+    }
+    
+    .section-title, .section-subtitle {
+        text-align: center;
+    }
+    
+    .social-links {
+        text-align: center;
+    }
+    
+    .social-links h3 {
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 
     .footer-content {
@@ -1284,10 +1303,11 @@ p {
 
 
 .social-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1.5rem;
     margin-top: 1.5rem;
+    justify-items: center;
 }
 
 .social-link {
@@ -1295,13 +1315,20 @@ p {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--text-primary);
     transition: var(--transition);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    min-width: 100px;
+    text-align: center;
 }
 
 .social-link:hover {
     color: var(--light-gold);
     transform: translateY(-5px);
+    background: rgba(255,255,255,0.2);
 }
 
 .social-icon {
@@ -1314,5 +1341,51 @@ p {
 /* Ajuste para ícones coloridos se necessário */
 .social-icon.facebook { filter: none; } 
 .social-icon.linkedin { filter: none; }
+
+/* Responsividade para mobile - layout 3x3 */
+@media (max-width: 768px) {
+    .social-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        max-width: 350px;
+        margin: 1.5rem auto 0;
+    }
+    
+    .social-link {
+        padding: 0.8rem 0.5rem;
+        min-width: 80px;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .social-link span {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+        max-width: 300px;
+    }
+    
+    .social-link {
+        padding: 0.6rem 0.3rem;
+        min-width: 70px;
+    }
+    
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .social-link span {
+        font-size: 0.75rem;
+    }
+}
 
 
