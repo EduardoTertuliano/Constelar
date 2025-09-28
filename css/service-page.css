@@ -560,37 +560,3 @@
     100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-
-
-/* Hero Background Image */
-.hero-bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.3;
-    z-index: 0;
-}
-
-.service-hero-background .hero-bg-image {
-    filter: brightness(0.4) contrast(1.2);
-}
-
-/* Overlay para melhor legibilidade do texto */
-.service-hero-background::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(26, 26, 46, 0.7) 0%, rgba(22, 33, 62, 0.6) 50%, rgba(15, 52, 96, 0.7) 100%);
-    z-index: 1;
-}
-
-.service-hero-content {
-    position: relative;
-    z-index: 3;
-}
