@@ -823,12 +823,14 @@ section {
     gap: 1rem;
 }
 
+/* CORREÇÃO APLICADA AQUI: Aumentando a opacidade do fundo e adicionando borda */
 .social-link {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 1rem;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.2); /* Aumentado de 0.1 para 0.2 */
+    border: 1px solid rgba(255,255,255,0.3); /* Adicionada borda clara */
     border-radius: var(--border-radius);
     text-decoration: none;
     color: var(--text-primary);
@@ -837,7 +839,8 @@ section {
 }
 
 .social-link:hover {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.3); /* Aumentado de 0.2 para 0.3 no hover */
+    border-color: rgba(255,255,255,0.6); /* Borda mais visível no hover */
     transform: translateY(-2px);
 }
 
