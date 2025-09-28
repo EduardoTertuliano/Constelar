@@ -53,10 +53,8 @@ body {
     width: 100%;
     background: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(10px);
-    z-index: 1001; 
+    z-index: 1000;
     transition: var(--transition);
-    /* CORREÇÃO: Garante que todo texto no header seja primário/branco */
-    color: var(--text-primary); 
 }
 
 .navbar {
@@ -89,8 +87,8 @@ body {
 }
 
 .logo {
-    width: 150px; 
-    height: auto; 
+    width: 150px; /* Largura do logo principal */
+    height: auto; /* Altura automática para manter a proporção */
     border-radius: 0%;
     background: none;
     display: flex;
@@ -101,8 +99,8 @@ body {
 
 
 .footer-logo .logo {
-    width: 150px; 
-    height: auto; 
+    width: 150px; /* Largura do logo principal no footer */
+    height: auto; /* Altura automática para manter a proporção */
     border-radius: 0%;
     background: none;
 }
@@ -114,12 +112,10 @@ body {
     color: var(--text-primary);
 }
 
-/* Menu de navegação em telas grandes */
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 2rem;
-    transition: var(--transition); 
 }
 
 .nav-link {
@@ -149,11 +145,11 @@ body {
     width: 100%;
 }
 
-/* Ícone do Hambúrguer (Oculto em telas grandes) */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    /* Ajustes para o botão hambúrguer */
     justify-content: space-around;
     width: 30px;
     height: 25px;
@@ -175,8 +171,6 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding-top: 80px; 
-    z-index: 1; 
 }
 
 .hero-background {
@@ -571,6 +565,10 @@ section {
 }
 
 .service-card {
+    padding: 1.5rem;
+}
+
+.service-card {
     background: white;
     border-radius: var(--border-radius);
     padding: 2rem;
@@ -579,9 +577,6 @@ section {
     border: 1px solid #f0f0f0;
     position: relative;
     overflow: hidden;
-    /* CORREÇÃO PARA CENTRALIZAR BOTÕES: Habilita Flexbox no cartão */
-    display: flex;
-    flex-direction: column;
 }
 
 .service-card::before {
@@ -609,8 +604,8 @@ section {
     font-size: 3rem;
     margin-bottom: 1rem;
     display: block;
-    width: 100%; 
-    height: 150px; 
+    width: 100%; /* Ocupar toda a largura do card */
+    height: 150px; /* Altura fixa para as imagens */
     border-radius: 12px;
     overflow: hidden;
     margin: 0 auto 1rem auto;
@@ -618,6 +613,13 @@ section {
     align-items: center;
     justify-content: center;
     background: var(--background-light);
+}
+
+.service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .service-icon img {
@@ -639,25 +641,13 @@ section {
     color: var(--text-dark);
     margin-bottom: 1.5rem;
     line-height: 1.6;
-    /* CORREÇÃO: Permite que o texto empurre o footer para baixo */
-    flex-grow: 1; 
-}
-
-/* NOVO BLOCO: Container para os links/botões (Adicionado no HTML) */
-.service-footer {
-    /* CORREÇÃO: Centraliza os links/botões */
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    margin-top: auto; 
-    gap: 1rem;
-    flex-wrap: wrap; 
 }
 
 .service-link {
     color: var(--gold-color);
     text-decoration: none;
     font-weight: 600;
+    margin-right: 1rem;
     transition: var(--transition);
 }
 
@@ -675,6 +665,7 @@ section {
     font-weight: 600;
     transition: var(--transition);
     display: inline-block;
+    margin-top: 0.5rem;
     box-shadow: 0 4px 15px rgba(13, 167, 217, 0.3);
 }
 
@@ -866,15 +857,9 @@ section {
 /* Footer */
 .footer {
     background: var(--primary-color);
-    /* CORREÇÃO: Define a cor base do texto para branco */
-    color: var(--text-primary); 
+    color: var(--text-primary);
     padding: 2rem 0;
     text-align: center;
-}
-
-/* NOVIDADE: Garante que parágrafos no footer sejam brancos */
-.footer p {
-    color: var(--text-primary);
 }
 
 .footer-content {
@@ -885,8 +870,8 @@ section {
 }
 
 .footer-logo .logo {
-    width: 150px;
-    height: auto;
+    width: 150px; /* Ajustado para a largura do logo no index.html */
+    height: auto; /* Mantém a proporção */
     border-radius: 0%;
     background: none;
 }
@@ -918,7 +903,10 @@ section {
     height: auto;
 }
 
-/* Custom Fonts (Mantidas) */
+
+
+
+/* Custom Fonts */
 @font-face {
     font-family: 'Comfortaa';
     src: url('../assets/fontes/Comfortaa/Comfortaa-Regular.ttf') format('truetype');
@@ -965,7 +953,7 @@ section {
 }
 @font-face {
     font-family: 'Roboto';
-    src: url('../assets/fontes/roboto/Roboto-Regular.ttf') format('truetype'); 
+    src: url('../assets/fontes/roboto/Roboto-Regular.ttf') format('truetype'); /* Assuming Regular exists, if not, use Medium */
     font-weight: 400;
     font-style: normal;
 }
@@ -994,7 +982,10 @@ section {
     font-style: italic;
 }
 
-/* Padronização de Textos (Mantida) */
+
+
+
+/* Padronização de Textos */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     color: var(--primary-color);
@@ -1069,7 +1060,7 @@ p {
     white-space: nowrap;
 }
 
-/* Scroll Animations (Mantidas) */
+/* Scroll Animations */
 .fade-in-up {
     animation: fadeInUp 0.6s ease-out;
 }
@@ -1085,13 +1076,13 @@ p {
     transform: translateY(0);
 }
 
-/* Loading States (Mantidas) */
+/* Loading States */
 .loading {
     opacity: 0.7;
     pointer-events: none;
 }
 
-/* Focus States for Accessibility (Mantidas) */
+/* Focus States for Accessibility */
 .btn:focus,
 .nav-link:focus,
 .service-link:focus {
@@ -1099,7 +1090,7 @@ p {
     outline-offset: 2px;
 }
 
-/* Print Styles (Mantidas) */
+/* Print Styles */
 @media print {
     .header,
     .footer {
@@ -1119,35 +1110,36 @@ p {
 
 /*
 ===================================================
-RESPONSIVIDADE (MOBILE - 768px)
+INÍCIO DAS CORREÇÕES DE RESPONSIVIDADE (MENU FIXO)
 ===================================================
 */
 
+/* Responsividade */
 @media (max-width: 768px) {
     /* Menu de Navegação */
     .hamburger {
-        display: flex; 
+        display: flex; /* O ícone do hambúrguer fica visível */
     }
     
     .nav-menu {
-        position: fixed; 
-        left: -100%; 
-        top: 70px; 
+        position: fixed; /* Fixa o menu na tela, abaixo do header */
+        left: -100%; /* Oculta o menu por padrão (fora da tela) */
+        top: 70px; /* Ajuste para altura do seu header */
         flex-direction: column;
         background-color: var(--primary-color);
         width: 100%;
-        height: calc(100vh - 70px); 
+        height: calc(100vh - 70px); /* Ocupa o restante da altura da tela */
         text-align: center;
-        transition: left 0.3s ease-in-out; 
+        transition: left 0.3s ease-in-out; /* Transição para o efeito de deslizar */
         box-shadow: 0 10px 27px rgba(0,0,0,0.05);
         padding: 1rem 0;
-        z-index: 1000; 
-        overflow-y: auto; 
-        gap: 0; 
+        z-index: 999;
+        overflow-y: auto; /* Permite scroll se houver muitos links */
+        gap: 0; /* Garante que os itens de lista não tenham o gap de 2rem */
     }
 
     .nav-menu.active {
-        left: 0; 
+        left: 0; /* Traz o menu para dentro da tela quando a classe 'active' é adicionada pelo JS */
     }
 
     .nav-menu li {
@@ -1166,8 +1158,7 @@ RESPONSIVIDADE (MOBILE - 768px)
     
     /* Outras seções */
     .hero {
-        padding-top: 100px; 
-        text-align: center;
+        padding-top: 100px; /* Adiciona padding para evitar que o conteúdo fique sob o header fixo */
     }
 
     .hero-content {
@@ -1193,19 +1184,8 @@ RESPONSIVIDADE (MOBILE - 768px)
     }
     
     .about-image {
-        /* CORREÇÃO: CENTRALIZAÇÃO DO SLIDER NO MOBILE */
         order: -1;
         margin-bottom: 2rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    /* CORREÇÃO: Ajuste de tamanho e centralização do Slider */
-    .games-slider {
-        width: 100%; 
-        max-width: 350px; 
-        height: 350px; 
-        margin: 0 auto; 
     }
 
     .services-grid {
@@ -1258,9 +1238,10 @@ RESPONSIVIDADE (MOBILE - 768px)
 }
 /*
 ===================================================
-RESPONSIVIDADE (SMARTPHONE - 480PX)
+FIM DAS CORREÇÕES DE RESPONSIVIDADE (MENU FIXO)
 ===================================================
 */
+
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
@@ -1281,7 +1262,7 @@ RESPONSIVIDADE (SMARTPHONE - 480PX)
     .btn {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
-        width: 100%; 
+        width: 100%; /* Força o botão a ocupar toda a largura em telas muito pequenas */
     }
     
     .floating-elements {
@@ -1299,7 +1280,7 @@ RESPONSIVIDADE (SMARTPHONE - 480PX)
     }
     
     .services-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* Em telas muito pequenas, o grid de serviços vira coluna única */
         gap: 1rem;
     }
     
@@ -1318,18 +1299,14 @@ RESPONSIVIDADE (SMARTPHONE - 480PX)
     }
     
     .social-grid {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
-        max-width: 300px;
+        max-width: 320px;
         margin: 1.5rem auto 0;
         padding: 0 0.5rem;
     }
     
     .social-link {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
         padding: 0.8rem 0.5rem;
         min-width: 85px;
         border-radius: 10px;
@@ -1348,20 +1325,26 @@ RESPONSIVIDADE (SMARTPHONE - 480PX)
     }
 }
 
-/*
-===================================================
-RESPONSIVIDADE (SMARTPHONE MUITO PEQUENO - 360PX)
-===================================================
-*/
 @media (max-width: 360px) {
     .social-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: repeat(3, 1fr);
         gap: 0.8rem;
         max-width: 280px;
     }
     
     .social-link {
         padding: 0.7rem 0.4rem;
-        min-width: 100%;
+        min-width: 75px;
+    }
+    
+    .social-icon {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .social-link span {
+        font-size: 0.75rem;
+        font-weight: 500;
     }
 }

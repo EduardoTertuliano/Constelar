@@ -53,10 +53,9 @@ body {
     width: 100%;
     background: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(10px);
+    /* Z-INDEX EXTREMAMENTE ALTO PARA GARANTIR QUE FIQUE ACIMA DE TUDO */
     z-index: 1001; 
     transition: var(--transition);
-    /* CORREÇÃO: Garante que todo texto no header seja primário/branco */
-    color: var(--text-primary); 
 }
 
 .navbar {
@@ -176,6 +175,7 @@ body {
     position: relative;
     overflow: hidden;
     padding-top: 80px; 
+    /* Z-index normal (padrão 1 ou 2) para ficar abaixo do menu */
     z-index: 1; 
 }
 
@@ -571,6 +571,10 @@ section {
 }
 
 .service-card {
+    padding: 1.5rem;
+}
+
+.service-card {
     background: white;
     border-radius: var(--border-radius);
     padding: 2rem;
@@ -579,9 +583,6 @@ section {
     border: 1px solid #f0f0f0;
     position: relative;
     overflow: hidden;
-    /* CORREÇÃO PARA CENTRALIZAR BOTÕES: Habilita Flexbox no cartão */
-    display: flex;
-    flex-direction: column;
 }
 
 .service-card::before {
@@ -627,6 +628,13 @@ section {
     border-radius: 12px;
 }
 
+.service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
 .service-title {
     font-family: var(--font-display);
     font-size: 1.5rem;
@@ -639,25 +647,13 @@ section {
     color: var(--text-dark);
     margin-bottom: 1.5rem;
     line-height: 1.6;
-    /* CORREÇÃO: Permite que o texto empurre o footer para baixo */
-    flex-grow: 1; 
-}
-
-/* NOVO BLOCO: Container para os links/botões (Adicionado no HTML) */
-.service-footer {
-    /* CORREÇÃO: Centraliza os links/botões */
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    margin-top: auto; 
-    gap: 1rem;
-    flex-wrap: wrap; 
 }
 
 .service-link {
     color: var(--gold-color);
     text-decoration: none;
     font-weight: 600;
+    margin-right: 1rem;
     transition: var(--transition);
 }
 
@@ -675,6 +671,7 @@ section {
     font-weight: 600;
     transition: var(--transition);
     display: inline-block;
+    margin-top: 0.5rem;
     box-shadow: 0 4px 15px rgba(13, 167, 217, 0.3);
 }
 
@@ -866,15 +863,9 @@ section {
 /* Footer */
 .footer {
     background: var(--primary-color);
-    /* CORREÇÃO: Define a cor base do texto para branco */
-    color: var(--text-primary); 
+    color: var(--text-primary);
     padding: 2rem 0;
     text-align: center;
-}
-
-/* NOVIDADE: Garante que parágrafos no footer sejam brancos */
-.footer p {
-    color: var(--text-primary);
 }
 
 .footer-content {
@@ -918,7 +909,7 @@ section {
     height: auto;
 }
 
-/* Custom Fonts (Mantidas) */
+/* Custom Fonts */
 @font-face {
     font-family: 'Comfortaa';
     src: url('../assets/fontes/Comfortaa/Comfortaa-Regular.ttf') format('truetype');
@@ -994,7 +985,8 @@ section {
     font-style: italic;
 }
 
-/* Padronização de Textos (Mantida) */
+
+/* Padronização de Textos */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     color: var(--primary-color);
@@ -1069,7 +1061,7 @@ p {
     white-space: nowrap;
 }
 
-/* Scroll Animations (Mantidas) */
+/* Scroll Animations */
 .fade-in-up {
     animation: fadeInUp 0.6s ease-out;
 }
@@ -1085,13 +1077,13 @@ p {
     transform: translateY(0);
 }
 
-/* Loading States (Mantidas) */
+/* Loading States */
 .loading {
     opacity: 0.7;
     pointer-events: none;
 }
 
-/* Focus States for Accessibility (Mantidas) */
+/* Focus States for Accessibility */
 .btn:focus,
 .nav-link:focus,
 .service-link:focus {
@@ -1099,7 +1091,7 @@ p {
     outline-offset: 2px;
 }
 
-/* Print Styles (Mantidas) */
+/* Print Styles */
 @media print {
     .header,
     .footer {
@@ -1126,28 +1118,29 @@ RESPONSIVIDADE (MOBILE - 768px)
 @media (max-width: 768px) {
     /* Menu de Navegação */
     .hamburger {
-        display: flex; 
+        display: flex; /* O ícone do hambúrguer fica visível */
     }
     
     .nav-menu {
-        position: fixed; 
-        left: -100%; 
-        top: 70px; 
+        position: fixed; /* CRÍTICO: Fixa o menu na tela */
+        left: -100%; /* CRÍTICO: Oculta o menu por padrão (fora da tela) */
+        top: 70px; /* Alinha o menu abaixo do header fixo (ajuste se a altura do seu header for diferente) */
         flex-direction: column;
         background-color: var(--primary-color);
         width: 100%;
         height: calc(100vh - 70px); 
         text-align: center;
-        transition: left 0.3s ease-in-out; 
+        transition: left 0.3s ease-in-out; /* Efeito de deslizar */
         box-shadow: 0 10px 27px rgba(0,0,0,0.05);
         padding: 1rem 0;
+        /* Z-INDEX ALTO PARA FICAR ACIMA DO CONTEÚDO, MAS ABAIXO DO HEADER (1001) */
         z-index: 1000; 
         overflow-y: auto; 
         gap: 0; 
     }
 
     .nav-menu.active {
-        left: 0; 
+        left: 0; /* CRÍTICO: Traz o menu para dentro da tela */
     }
 
     .nav-menu li {
@@ -1166,7 +1159,7 @@ RESPONSIVIDADE (MOBILE - 768px)
     
     /* Outras seções */
     .hero {
-        padding-top: 100px; 
+        padding-top: 100px; /* Garante que o conteúdo não fique sob o header fixo */
         text-align: center;
     }
 
@@ -1193,19 +1186,8 @@ RESPONSIVIDADE (MOBILE - 768px)
     }
     
     .about-image {
-        /* CORREÇÃO: CENTRALIZAÇÃO DO SLIDER NO MOBILE */
         order: -1;
         margin-bottom: 2rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    /* CORREÇÃO: Ajuste de tamanho e centralização do Slider */
-    .games-slider {
-        width: 100%; 
-        max-width: 350px; 
-        height: 350px; 
-        margin: 0 auto; 
     }
 
     .services-grid {
@@ -1281,7 +1263,7 @@ RESPONSIVIDADE (SMARTPHONE - 480PX)
     .btn {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
-        width: 100%; 
+        width: 100%; /* Botões no Hero ocupam 100% da largura em telas pequenas */
     }
     
     .floating-elements {
@@ -1299,7 +1281,7 @@ RESPONSIVIDADE (SMARTPHONE - 480PX)
     }
     
     .services-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* Serviços em coluna única */
         gap: 1rem;
     }
     
@@ -1318,7 +1300,7 @@ RESPONSIVIDADE (SMARTPHONE - 480PX)
     }
     
     .social-grid {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr); /* Reduzindo para 2 colunas no máximo */
         gap: 1rem;
         max-width: 300px;
         margin: 1.5rem auto 0;
@@ -1355,7 +1337,7 @@ RESPONSIVIDADE (SMARTPHONE MUITO PEQUENO - 360PX)
 */
 @media (max-width: 360px) {
     .social-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* 1 coluna para social media em telas muito estreitas */
         gap: 0.8rem;
         max-width: 280px;
     }
