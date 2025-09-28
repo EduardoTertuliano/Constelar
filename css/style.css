@@ -1210,7 +1210,12 @@ RESPONSIVIDADE (MOBILE - 768px)
         height: 350px; 
         margin: 0 auto; 
     }
-
+    
+    /* CORREÇÃO APLICADA: Evita que o cabeçalho fixo esconda a seção Serviços */
+    #services {
+        padding-top: 100px;
+    }
+    
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
