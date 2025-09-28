@@ -1,0 +1,141 @@
+/* Estilos para o layout mobile das redes sociais */
+
+/* Estilos padrão para telas grandes (desktop) */
+.contact .social-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Garante que os itens fiquem em uma única linha */
+    gap: 20px;
+    justify-content: center; /* Centraliza os itens na linha */
+    align-items: center;
+    padding: 0 20px;
+}
+
+.contact .social-link {
+    display: flex;
+    flex-direction: row; /* Ícones e texto na mesma linha para desktop */
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.contact .social-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.contact .social-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px; /* Espaço entre ícone e texto */
+    filter: brightness(0) invert(1); /* Torna os ícones brancos */
+}
+
+.contact .social-link span {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* Ajustes no título da seção */
+.contact .social-links h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: #f4a261;
+    font-weight: 600;
+}
+
+/* Ajustes na seção de contato */
+.contact {
+    /* Removido o background azul para desktop */
+    padding: 60px 0;
+}
+
+.contact .section-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contact .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Estilos para telas de celular (max-width: 768px) */
+@media (max-width: 768px) {
+    .contact {
+        background: none; /* Remove o fundo azul em telas de celular */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centraliza verticalmente */
+        align-items: center; /* Centraliza horizontalmente */
+        min-height: 100vh; /* Garante que a seção ocupe a altura total da viewport */
+        padding: 0; /* Remove padding para centralização total */
+    }
+
+    .contact .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact .contact-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact .social-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 colunas iguais */
+        gap: 15px;
+        max-width: 400px;
+        margin: 0 auto; /* Centraliza o grid */
+        padding: 0 20px;
+    }
+    
+    .contact .social-link {
+        flex-direction: column; /* Ícone acima do texto para mobile */
+        justify-content: center;
+        padding: 20px 15px;
+        min-height: 100px;
+    }
+    
+    .contact .social-icon {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 8px;
+        margin-right: 0; /* Remove margem direita para centralizar */
+    }
+    
+    .contact .social-link span {
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    /* YouTube centralizado na última linha */
+    .contact .social-link:last-child {
+        grid-column: 1 / -1; /* Ocupa toda a largura */
+        max-width: 200px;
+        margin: 10px auto 0; /* Centraliza o item */
+        justify-self: center;
+    }
+
+    .contact .section-title, .contact .section-subtitle, .contact .social-links h3 {
+        text-align: center;
+        width: 100%;
+    }
+}
