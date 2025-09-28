@@ -147,12 +147,13 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    z-index: 1001;
 }
 
 .bar {
     width: 25px;
     height: 3px;
-    background: var(--text-primary);
+    background: white;
     margin: 3px 0;
     transition: var(--transition);
 }
@@ -739,7 +740,7 @@ section {
 }
 
 .specialty {
-    background: var(--gradient-secondary);
+    background: #0DA7D9;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -956,7 +957,10 @@ section {
 /* Tablets e dispositivos médios */
 @media (max-width: 768px) {
     .hamburger {
-        display: flex;
+        display: flex !important;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 1001;
     }
     
     .nav-menu {
@@ -1074,6 +1078,33 @@ section {
     .nav-logo {
         gap: 10px;
     }
+    
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: fixed;
+        left: -100%;
+        top: 50px;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        padding: 2rem 0;
+        z-index: 1000;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+        left: 0;
+    }
 
     .hero-title {
         font-size: 2.5rem;
@@ -1093,12 +1124,58 @@ section {
         width: 200px;
         height: 200px;
     }
-    
-    .profile-circle {
+        .profile-circle {
         width: 200px;
         height: 200px;
     }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 320px) {
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 1001;
+        background: rgba(255,255,255,0.1);
+        padding: 5px;
+        border-radius: 3px;
+    }
     
+    .bar {
+        width: 20px;
+        height: 2px;
+        background: white;
+        margin: 2px 0;
+        transition: var(--transition);
+    }
+    
+    .nav-menu {
+        display: none;
+        position: fixed;
+        left: -100%;
+        top: 45px;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        padding: 1.5rem 0;
+        z-index: 1000;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+        left: 0;
+    }
+    
+    .nav-link {
+        color: white;
+        padding: 0.8rem 0;
+        font-size: 1rem;
+    }
+}    
     .profile-circle::before {
         font-size: 4rem;
     }
@@ -1143,3 +1220,30 @@ section {
         display: none;
     }
 }
+
+
+
+/* --- FIX: garantir visibilidade do menu móvel --- */
+@media (max-width: 768px) {
+    /* força o menu a usar display flex quando ativo e garante z-index acima de overlays */
+    .nav-menu.active {
+        display: flex !important;
+        left: 0 !important;
+        top: 60px !important;
+        z-index: 9999 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    /* garante que os itens estejam visíveis e com cor legível */
+    .nav-menu li, .nav-menu a.nav-link {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: var(--text-primary) !important;
+    }
+    /* ajuste para evitar que elementos fixos se sobreponham ao menu */
+    .hero, .hero-background, .floating-elements, .profile-circle {
+        z-index: 0 !important;
+    }
+}
+/* --- FIM DO FIX --- */
