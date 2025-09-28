@@ -27,18 +27,7 @@ function initializeNavigation() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
             
-            // Animate hamburger bars
-            const bars = hamburger.querySelectorAll('.bar');
-            bars.forEach((bar, index) => {
-                if (hamburger.classList.contains('active')) {
-                    if (index === 0) bar.style.transform = 'rotate(-45deg) translate(-5px, 6px)';
-                    if (index === 1) bar.style.opacity = '0';
-                    if (index === 2) bar.style.transform = 'rotate(45deg) translate(-5px, -6px)';
-                } else {
-                    bar.style.transform = 'none';
-                    bar.style.opacity = '1';
-                }
-            });
+
         });
     }
     
@@ -49,12 +38,7 @@ function initializeNavigation() {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 
-                // Reset hamburger bars
-                const bars = hamburger.querySelectorAll('.bar');
-                bars.forEach(bar => {
-                    bar.style.transform = 'none';
-                    bar.style.opacity = '1';
-                });
+
             }
         });
     });
